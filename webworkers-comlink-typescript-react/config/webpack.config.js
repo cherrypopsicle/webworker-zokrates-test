@@ -362,19 +362,6 @@ module.exports = function (webpackEnv) {
     module: {
       strictExportPresence: true,
       rules: [
-        {
-          test: /\.wasm$/,
-          type: "javascript/auto" /** this disables webpacks default handling of wasm */,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                name: "wasm/[name].[hash].[ext]",
-                publicPath: "/src/",
-              },
-            },
-          ],
-        },
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
         {

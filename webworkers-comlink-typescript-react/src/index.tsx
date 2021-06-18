@@ -5,10 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { wrap } from "comlink";
 
-function testWorker() {
+function testWorker () {
   console.log("testing worker");
-  const worker = new Worker("./zk-cra-worker", {
-    name: "zk-cra-worker",
+  const worker = new Worker("./zk-cra-worker/index.ts", {
+    name: "worker",
     type: "module",
   });
   const workerApi = wrap<import("./zk-cra-worker").ZKCRAWorker>(worker);
